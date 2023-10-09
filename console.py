@@ -9,7 +9,7 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = "(hbnb) "
 
-    def do_quir(self, args):
+    def do_quit(self, args):
         """
         Quit the program.
         Usage: quit
@@ -18,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, args):
         """
-        Quit the program.
+        Exit the program.
         Usage: EOF
         """
         return True
