@@ -23,7 +23,8 @@ class HBNBCommand(cmd.Cmd):
         args = shlex.split(line)
         if not args:
             print("** class name missing **")
-        elif args[0] not in storage.classes:
+        from models import storage
+        if args[0] not in storage.classes:
             print("** class doesn't exist **")
         else:
             new_instance = storage.classes[args[0]]()
@@ -146,6 +147,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
-    storage.reload()
-    storage.classes = {"BaseModel": BaseModel}
     HBNBCommand().cmdloop()
