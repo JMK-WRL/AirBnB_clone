@@ -2,10 +2,27 @@
 """Class that serializes and deserializes to a JSON file."""
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 class FileStorage:
     __file_path = "file.json"
     __objects = {}
+    classes {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review,
+    }
 
     def all(self):
         """Return the dictionary __objects."""
@@ -29,8 +46,14 @@ class FileStorage:
                 obj_dict = json.load(file)
                 for key, value in obj_dict.items():
                     class_name, obj_id = key.split('.')
-                    cls = models[class_name]
-                    obj = cls(**value)
+                    cls = FileStorage.classes[class_name]
+
+                    if class_name == 'User':
+                        obj = cls(**value)
+                    else:
+                        obj = cls(**value)
+
                     FileStorage.__objects[key] = obj
+
         except FileNotFoundError:
             pass
