@@ -4,11 +4,11 @@
 import uuid
 from datetime import datetime
 
-
 class BaseModel:
 
     """Class to be inherited by all class models"""
     def __init__(self, *args, **kwargs):
+        from models import storage
         """Initialize BaseModel instance.
 
         Args:
@@ -34,7 +34,7 @@ class BaseModel:
 
     def save(self):
         """Update the updated_at attribute with the current datetime."""
-        """self.updated_at = datetime.now()"""
+        self.updated_at = datetime.now()
         """Call save() method of storage"""
         from models import storage
         storage.save()

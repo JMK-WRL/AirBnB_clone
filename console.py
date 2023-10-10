@@ -3,7 +3,8 @@
 
 import cmd
 import json
-import models
+from models.base_model import BaseModel
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
@@ -18,12 +19,13 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Creates a new instance of BaseModel and saves it to the JSON file"""
-        if not arg:
+        args = arg.split()
+        if not args:
             print("** class name missing **")
-        elif arg not in models.classes:
+        elif args[0] not in storage.classes:
             print("** class doesn't exist **")
         else:
-            new_instance = models.classes[arg]()
+            new_instance = storage.classes[args[0]]()
             new_instance.save()
             print(new_instance.id)
 
@@ -68,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
         if not arg:
             objects = models.storage.all()
             print([str(obj) for obj in objects.values()])
-        elif args[0] not in models.classes:
+        elif args[0] not in storage.classes:
             print("** class doesn't exist **")
 
     def do_update(self, arg):
