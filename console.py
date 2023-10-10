@@ -3,7 +3,7 @@
 
 import cmd
 import shlex
-from models import storage
+from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 
 
@@ -146,4 +146,6 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == '__main__':
+    storage.reload()
+    storage.classes = {"BaseModel": BaseModel}
     HBNBCommand().cmdloop()
