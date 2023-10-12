@@ -39,25 +39,25 @@ The command interpreter supports various commands to interact with the available
 Here are some examples of how to use the command interpreter:
 
 ```
-1. Creating a User instance:
+1. Creating a User instance: create BaseModel
 ```
 ```
-2. Showing a User instance by ID:
+2. Showing a User instance by ID: show BaseModel
 ```
 ```
-3. Deleting a User instance by ID:
-```
-
-```
-4. Listing all instances of a class:
+3. Deleting a User instance by ID: destroy
 ```
 
 ```
-5. Updating an instance's attribute:
+4. Listing all instances of a class: all BaseModel
 ```
 
 ```
-6. Quitting the program:
+5. Updating an instance's attribute: update BaseModel <user instance ID>
+```
+
+```
+6. Quitting the program: EOF or quit or Ctrl+D
 ```
 
 
