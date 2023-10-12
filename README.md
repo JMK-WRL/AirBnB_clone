@@ -38,6 +38,9 @@ The command interpreter supports various commands to interact with the available
 
 Here are some examples of how to use the command interpreter:
 
+```
+1. Creating a User instance:
+```
 1. Creating a User instance:
 
 
