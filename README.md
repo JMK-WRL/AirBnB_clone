@@ -59,8 +59,6 @@ Here are some examples of how to use the command interpreter:
 ## Authors
 
 Victor Njeru | Email: [ynwvroy](mailto:bennetfrmdao@gmail.com)
-              | Github: [ynwvroy]
 
 Jonathan Kyule | Email: [JMK-WRL](mailto:jonathankyule2@gmail.com)
-                | Github: [JMK-WRL]
-
+                
