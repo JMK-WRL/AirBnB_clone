@@ -53,7 +53,7 @@ Here are some examples of how to use the command interpreter:
 ```
 
 ```
-5. Updating an instance's attribute: update BaseModel <user instance ID>
+5. Updating an instance's attribute: update BaseModel <user BaseModel I.D>
 ```
 
 ```
