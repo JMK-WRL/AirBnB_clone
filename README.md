@@ -10,7 +10,7 @@ This project is an implementation of a command-line interpreter for an AirBnB cl
 
 To start the command interpreter, follow these steps:
 
-1. Clone the project repository from [GitHub](https://github.com/yourusername/yourproject).
+1. Clone the project repository from [GitHub](https://github.com/JMK-WRL/AirBnB_clone.git).
 2. Navigate to the project directory in your terminal.
 
 ### How to Use
@@ -39,4 +39,28 @@ The command interpreter supports various commands to interact with the available
 Here are some examples of how to use the command interpreter:
 
 1. Creating a User instance:
+
+
+2. Showing a User instance by ID:
+
+
+3. Deleting a User instance by ID:
+
+
+4. Listing all instances of a class:
+
+5. Updating an instance's attribute:
+
+
+6. Quitting the program:
+
+
+
+## Authors
+
+Victor Njeru | Email: [ynwvroy](mailto:)
+              | Github: [ynwvroy]
+
+Jonathan Kyule | Email: [JMK-WRL](mailto:jonathankyule2@gmail.com)
+                | Github: [JMK-WRL]
 
