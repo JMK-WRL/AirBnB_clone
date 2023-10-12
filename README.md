@@ -61,7 +61,7 @@ Here are some examples of how to use the command interpreter:
 ```
 
 
-## Authors
+### Authors
 
 Victor Njeru | Email: [ynwvroy](mailto:bennetfrmdao@gmail.com)
 
