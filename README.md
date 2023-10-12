@@ -34,6 +34,7 @@ The command interpreter supports various commands to interact with the available
   
 - **quit/EOF**: Quit the program.
 
+
 ### Examples
 
 Here are some examples of how to use the command interpreter:
@@ -61,7 +62,7 @@ Here are some examples of how to use the command interpreter:
 ```
 
 
-### Authors
+## Authors
 
 Victor Njeru | Email: [ynwvroy](mailto:bennetfrmdao@gmail.com)
 
