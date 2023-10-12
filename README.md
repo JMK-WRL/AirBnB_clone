@@ -41,22 +41,24 @@ Here are some examples of how to use the command interpreter:
 ```
 1. Creating a User instance:
 ```
-1. Creating a User instance:
-
-
+```
 2. Showing a User instance by ID:
-
-
+```
+```
 3. Deleting a User instance by ID:
+```
 
-
+```
 4. Listing all instances of a class:
+```
 
+```
 5. Updating an instance's attribute:
+```
 
-
+```
 6. Quitting the program:
-
+```
 
 
 ## Authors
