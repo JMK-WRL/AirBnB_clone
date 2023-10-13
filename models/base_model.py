@@ -4,6 +4,7 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
 
     """Class to be inherited by all class models"""
