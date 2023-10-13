@@ -30,8 +30,8 @@ class BaseModel:
 
     def __str__(self):
         """Return a string representation of the BaseModel instance."""
+        class_name = self.__class__.__name
         attributes = ', '.join(f"{key}={value!r}" for key, value in self.__dict__.items())
-        class_name = self.__class__.__name__
         return f"[{class_name}] ({self.id}) {attributes}"
 
 
