@@ -4,6 +4,7 @@
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
 
     """Class to be inherited by all class models"""
@@ -33,7 +34,6 @@ class BaseModel:
         class_name = self.__class__.__name
         attributes = ', '.join(f"{key}={value!r}" for key, value in self.__dict__.items())
         return f"[{class_name}] ({self.id}) {attributes}"
-
 
     def save(self):
         """Update the updated_at attribute with the current datetime."""
