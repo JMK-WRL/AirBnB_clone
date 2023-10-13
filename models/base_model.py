@@ -31,7 +31,8 @@ class BaseModel:
 
     def __str__(self):
         """Return a string representation of the BaseModel instance."""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        attributes = ', '.join(f"{key}={value!r}" for key, value in self.__dict__.items())
+        return f"[{self.__class__.__name__}] ({self.id}) {attributes}"
 
     def save(self):
         """Update the updated_at attribute with the current datetime."""
