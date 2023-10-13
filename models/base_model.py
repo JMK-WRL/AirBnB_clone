@@ -37,7 +37,6 @@ class BaseModel:
         )
         return f"[{class_name}] ({self.id}) {attributes}"
 
-
     def save(self):
         """Update the updated_at attribute with the current datetime."""
         self.updated_at = datetime.now()
