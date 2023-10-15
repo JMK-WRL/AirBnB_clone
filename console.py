@@ -196,5 +196,6 @@ class HBNBCommand(cmd.Cmd):
                 self.do_update(command_method[0] + ' ' + all_attributes[0] +
                                all_attributes[1] + all_attributes[2])
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
