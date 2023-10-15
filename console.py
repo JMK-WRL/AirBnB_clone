@@ -5,7 +5,6 @@ import shlex
 from models import storage
 from models.base_model import BaseModel
 
-
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class represents the command interpreter for the AirBnB project.
@@ -60,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         elif args[0] not in storage.classes:
             print("** class doesn't exist **")
-        elif len args) < 2:
+        elif len(args) < 2:
             print("** instance id missing **")
         else:
             key = args[0] + "." + args[1]
@@ -135,7 +134,6 @@ class HBNBCommand(cmd.Cmd):
         Usage: quit
         """
         return True
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
