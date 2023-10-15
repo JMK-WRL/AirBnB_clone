@@ -13,6 +13,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class represents the command interpreter.
@@ -162,6 +163,7 @@ class HBNBCommand(cmd.Cmd):
         Usage: quit
         """
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
