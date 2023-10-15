@@ -5,6 +5,7 @@ import shlex
 from models import storage
 from models.base_model import BaseModel
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class represents the command interpreter for the AirBnB project.
@@ -134,6 +135,7 @@ class HBNBCommand(cmd.Cmd):
         Usage: quit
         """
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
