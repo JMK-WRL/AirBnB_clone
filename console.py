@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Method Command Interpreter"""
+"""Method that defines a console"""
 
 import shlex
 import inspect
