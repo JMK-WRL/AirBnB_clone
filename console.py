@@ -19,7 +19,7 @@ from models.amenity import Amenity
 class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
-    class_dict = {"BaseModel": BaseModel, "User": User, "Place": Place,
+    classes = {"BaseModel": BaseModel, "User": User, "Place": Place,
                   "State": State, "City": City, "Amenity": Amenity,
                   "Review": Review}
 
