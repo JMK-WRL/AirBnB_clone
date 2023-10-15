@@ -14,7 +14,7 @@ from datetime import datetime
 class FileStorage:
     __file_path = "file.json"
     __objects = {}
-    classes = {
+    class_dict = {
         "BaseModel": BaseModel,
         "User": User,
         "State": State,
