@@ -8,14 +8,14 @@ from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
     """
-    HBNBCommand class represents the command interpreter for the AirBnB project.
+    HBNBCommand class represents the command interpreter..
     """
 
     prompt = "(hbnb) "
 
     def do_create(self, line):
         """
-        Create a new instance of BaseModel, save it to the JSON file, and print its id.
+        Create a new instance of BaseModel, save it to the JSON file..
 
         Usage: create <class name>
         """
@@ -31,7 +31,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """
-        Print the string representation of an instance based on the class name and id.
+        Print the string representation of an instance.
 
         Usage: show <class name> <id>
         """
@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """
-        Delete an instance based on the class name and id (save the change into the JSON file).
+        Delete an instance based on the class name and id.
 
         Usage: destroy <class name> <id>
         """
@@ -72,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, line):
         """
-        Print all string representations of instances based on the class name or all instances.
+        Print all string representations of instances.
 
         Usage: all [<class name>]
         """
@@ -92,8 +92,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """
-        Update an instance based on the class name and id by adding or updating an attribute
-        (save the change into the JSON file).
+        Update an instance based on the class name and id
 
         Usage: update <class name> <id> <attribute name> "<attribute value>"
         """
