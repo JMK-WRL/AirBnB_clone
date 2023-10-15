@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""The console"""
+"""Module that defines the console"""
 
 import cmd
 import shlex
