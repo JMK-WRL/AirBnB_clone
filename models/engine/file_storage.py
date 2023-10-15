@@ -41,7 +41,6 @@ class FileStorage:
             for key, obj in FileStorage.__objects.items()
         }
 
-
     def reload(self):
         """Deserialize the JSON file to __objects (if it exists)."""
         try:
