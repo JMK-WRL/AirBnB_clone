@@ -9,6 +9,7 @@ class BaseModel:
 
     """Class to be inherited by all class models"""
     __class__ = 'BaseModel'  # Define the class name attribute
+    __name__ = None
 
     def __init__(self, *args, **kwargs):
         """Initialize BaseModel instance.
@@ -29,7 +30,7 @@ class BaseModel:
             self.created_at = self.updated_at = datetime.now()
             models.storage.new(self)
 
-    def __str__(self):
+    def __base_str__(self):
         """Return a string representation of the BaseModel instance."""
         class_name = self.__class__.__name
         attributes = ', '.join(
