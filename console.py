@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             class_name = strings[0]
             all_instances = models.storage.all().values()
-            instances = [str(instance) for instance in all_instances if instance.__class__.__name__ == class_name]
+            instances = [str(instance) for instance in all_instances if hasattr(instance, '__class__') and instance.__class__.__name__ == class_name]
             print(instances)
 
 
