@@ -75,21 +75,24 @@ class HBNBCommand(cmd.Cmd):
             except KeyError:
                 print("** no instance found **")
 
-    def do_all(self, args):
+    def do_all(self, class_name):
         """Prints a string representation of all instances, can include class
         name to specify only instances of that class
         Usage: all <class name>.all()
         """
-        strings = args.split()
-        if len(strings) == 0:
-            print("** class name missing **")
-        elif strings[0] not in HBNBCommand.class_dict.keys():
-            print("** class doesn't exist **")
+        if class_name:
+            self.do_all_class(class_name)
         else:
             class_name = strings[0]
             all_instances = models.storage.all().values()
             instances = [str(instance) for instance in all_instances if hasattr(instance, '__class__') and instance.__class__.__name__ == class_name]
             print(instances)
+
+    def do_all_class(self, class_name):
+        objects = models.storage.all()
+        instances = [obj for obj in objects.values() if obj.__class__== class_name]
+        print(instances)
+
 
 
     def do_update(self, args):
@@ -153,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         command_method = args.split('.')
         if len(command_method) == 2 and command_method[1] == "all()":
             class_name = command_method[0]
-            self.do_all(class_name)
+            self.do_all_class(class_name)
         else:
             print("** Invalid command **")
 
