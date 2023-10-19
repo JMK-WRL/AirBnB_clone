@@ -151,12 +151,12 @@ class HBNBCommand(cmd.Cmd):
         """
         counter = 0
         command_method = args.split('.')
-        if len(command_methond) == 2 and command_method[1] == "all()":
+        if len(command_method) == 2 and command_method[1] == "all()":
             class_name = command_method[0]
             self.do_all(class_name)
         else:
             print("** Invalid command **")
-            
+
         specific_method = command_method[1].split('(')
         if specific_method[0] == "count":
             for key in models.storage.all().keys():
