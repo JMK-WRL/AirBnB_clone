@@ -78,26 +78,19 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """Prints a string representation of all instances, can include class
         name to specify only instances of that class
-        Usage: all <class name>
+        Usage: all <class name>.all()
         """
         strings = args.split()
-        new_list = []
-        address_value = 0
-        if len(strings) == 1:
-            if strings[0] not in HBNBCommand.class_dict.keys():
-                print("** class doesn't exist **")
-            else:
-                for key in models.storage.all().keys():
-                    class_name = key.split('.')
-                    if class_name[0] == strings[0]:
-                        new_list.append(str(models.storage.all()[key]))
-                    else:
-                        continue
-                print(new_list)
+        if len(strings) == 0:
+            print("** class name missing **")
+        elif strings[0] not in HBNBCommand.class_dict.keys():
+            print("** class doesn't exist **")
         else:
-            for key, value in models.storage.all().items():
-                new_list.append(str(models.storage.all()[key]))
-            print(new_list)
+            class_name = strings[0]
+            all_instances = models.storage.all().values()
+            instances = [str(instance) for instance in all_instances if instance.__class__.__name__ == class_name]
+            print(instances)
+
 
     def do_update(self, args):
         """Update an instance.
