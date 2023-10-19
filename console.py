@@ -2,10 +2,11 @@
 """Command interpreter for a file storage system."""
 
 import cmd
-from models.base_model import BaseModel
-from models import storage
 import re
 import json
+from models.base_model import BaseModel
+from models import storage
+
 
 class HBNBCommand(cmd.Cmd):
     """Command interpreter class."""
@@ -152,7 +153,7 @@ class HBNBCommand(cmd.Cmd):
             matches = [
                 k for k in storage.all() if k.startswith(
                     words[0] + '.')]
-            print(len(matches)
+            print(len(matches))
 
     def do_update(self, arg):
         """Update an instance by adding or updating an attribute."""
