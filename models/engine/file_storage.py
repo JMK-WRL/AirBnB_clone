@@ -9,22 +9,6 @@ class FileStorage:
     __file_path = "file.json"  # Path to the data storage file
     __objects = {}  # Dictionary for storing objects
 
-    def all(self):
-        """Return the stored objects."""
-        return FileStorage.__objects
-
-    def new(self, obj):
-        """Add an object to the dictionary with a unique key."""
-        key = "{}.{}".format(type(obj).__name__, obj.id)
-        FileStorage.__objects[key] = obj
-
-    def save(self):
-        """Serialize objects to a JSON file (at __file_path)."""
-        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            # Serialize objects to a dictionary of dictionaries
-            d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
-            json.dump(d, f)
-
     def classes(self):
         """Return a dictionary of valid classes and their references."""
         from models.base_model import BaseModel
@@ -47,6 +31,24 @@ class FileStorage:
         }
         return classes
 
+
+    def all(self):
+        """Return the stored objects."""
+        return FileStorage.__objects
+
+    def new(self, obj):
+        """Add an object to the dictionary with a unique key."""
+        key = "{}.{}".format(type(obj).__name__, obj.id)
+        FileStorage.__objects[key] = obj
+
+    def save(self):
+        """Serialize objects to a JSON file (at __file_path)."""
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
+            # Serialize objects to a dictionary of dictionaries
+            d = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
+            json.dump(d, f)
+
+    
     def reload(self):
         """Load previously stored objects from a JSON file."""
         if not os.path.isfile(FileStorage.__file_path):
