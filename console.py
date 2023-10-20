@@ -4,6 +4,7 @@
 import cmd
 import re
 import json
+
 from models.base_model import BaseModel
 from models import storage
 
@@ -14,11 +15,26 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def default(self, arg):
-        """Catch and handle user commands."""
+        """Catch and handle user commands.
+
+        Args:
+            arg (str): The user's input command
+
+        This method intercepts user command to check for a specific pattern
+        
+        """
         self._precmd(arg)
 
     def _precmd(self, arg):
-        """Intercept commands to check for class.syntax() pattern."""
+        """Intercept commands to check for class.syntax() pattern.
+
+        Args:
+            arg (str): The user's input command
+
+        This method intercepts and processes the user's command to look for
+        a pattern resembling `class.method(id, attributes)`      
+        
+        """
         match = re.search(r"^(\w*)\.(\w+)(?:\(([^)]*)\))$", arg)
         if not match:
             return arg
@@ -48,7 +64,18 @@ class HBNBCommand(cmd.Cmd):
         return command
 
     def update_dict(self, classname, uid, s_dict):
-        """Update object attributes using a dictionary."""
+        """Update object attributes using a dictionary.
+
+        Args:
+
+            classname (str): The name of the class.
+            uid (str): The ID of the object to update.
+            s_dict (str): A JSON string containing attribute-value pairs.
+
+        This method is used to update the attributes of an object by providing
+        a dictionary-like structure in JSON format containing attribute-value pairs.
+        
+        """
         s = s_dict.replace("'", '"')
         d = json.loads(s)
         if not classname:
@@ -83,7 +110,14 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Create a new instance."""
+        """Create a new instance.
+
+        Args:
+            arg (str): The name of the class.
+
+        This method allows the user to create a new instance of a specified class.
+        
+        """
         if arg == "" or arg is None:
             print("** class name missing **")
         elif arg not in storage.classes():
